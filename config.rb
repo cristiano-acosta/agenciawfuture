@@ -3,7 +3,7 @@ require 'compass/import-once/activate'
 # Require any additional compass plugins here.
 
 add_import_path "js/vendor/bootstrap-sass/assets/stylesheets"
-add_import_path "js/vendor/font-awesome/scss"
+#add_import_path "js/vendor/font-awesome/scss"
 
 # Set this to the root of your project when deployed:
 http_path = "/"
