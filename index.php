@@ -97,11 +97,14 @@
             <div class="col-md-3">
               <h2>Entre em contato</h2>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-8">
               <h3>Faça agora um contato</h3>
               <div class="row">
                 <?php echo do_shortcode('[contact-form-7 id="4" title="Contato"]'); ?>
               </div>
+            </div>
+            <div class="col-md-1">
+
             </div>
           </div>
         </div>
