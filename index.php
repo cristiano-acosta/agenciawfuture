@@ -73,24 +73,38 @@
     <header id="header" role="presentation">
 
     </header>
-    <article id="<?php the_slug(); ?>">
-      <h1 class="hidden"><?php the_title() ?></h1>
-      <section id="about">
+    <?php global $post; if (have_posts()) : while (have_posts()) : the_post(); ?>
+      <article id="<?php the_slug(); ?>">
+        <h1 class="hidden"><?php the_title() ?></h1>
+        <section id="about">
 
-      </section>
-      <section id="servicos">
+        </section>
+        <section id="servicos">
 
-      </section>
-      <section id="projetos">
+        </section>
+        <section id="projetos">
 
-      </section>
-      <section id="blog">
+        </section>
+        <section id="blog">
 
-      </section>
-    </article>
+        </section>
+      </article>
+    <?php endwhile; endif; wp_reset_query(); ?>
     <footer id="footer">
       <div id="contato-rapido">
-
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <h2>Entre em contato</h2>
+            </div>
+            <div class="col-md-9">
+              <h3>Faça agora um contato</h3>
+              <div class="row">
+                <?php echo do_shortcode('[contact-form-7 id="4" title="Contato"]'); ?>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div id="mapa">
 
