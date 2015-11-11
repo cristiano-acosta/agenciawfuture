@@ -27,5 +27,57 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 // Import animate css
 @import "js/vendor/animate.css/animate.min.css";
+@import "js/vendor/vegas/dist/vegas.min.css";
 
 
+/* ==========================================================================
+   Cristiano Acosta-
+   ========================================================================== */
+/* Tags Ajusts */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  &:before, &:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-background-clip: padding-box !important;
+    -webkit-background-clip: padding-box !important;
+    background-clip: padding-box !important;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+  }
+}
+/* variables */
+$height: 615px;
+
+/* 1. header */
+header#header {
+  height: $height;
+  padding: ( ( $height - 90px ) / 2 ) 0;
+  h2 {
+    color:#fff;
+    margin: 20px  0 0 0;
+    font-size:24px;
+    small {
+      display:block;
+      color:#fff;
+      font-size:100%;
+    }
+    strong {
+      display:block;
+      color:#fff;
+      font-size:130%;
+    }
+  }
+}
