@@ -2758,7 +2758,11 @@ tbody.collapse.in { display: table-row-group; }
 /* line 13, js/vendor/bootstrap-sass/assets/stylesheets/bootstrap/_breadcrumbs.scss */
 .breadcrumb > li { display: inline-block; }
 /* line 16, js/vendor/bootstrap-sass/assets/stylesheets/bootstrap/_breadcrumbs.scss */
+<<<<<<< HEAD
+.breadcrumb > li + li:before { content: "/ "; padding: 0 5px; color: #ccc; }
+=======
 .breadcrumb > li + li:before { content: "/ "; padding: 0 5px; color: #ccc; }
+>>>>>>> refs/remotes/origin/master
 /* line 23, js/vendor/bootstrap-sass/assets/stylesheets/bootstrap/_breadcrumbs.scss */
 .breadcrumb > .active { color: #777777; }
 
