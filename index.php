@@ -38,7 +38,7 @@
       </p>
     <![endif]-->
 
-    <nav id="main-nav" class="navbar navbar-inverse" role="navigation">
+    <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -71,6 +71,16 @@
       </div>
     </nav>
     <header id="header" role="presentation">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <h2>
+              <small>O novo futuro</small>
+              <strong>começa agora</strong>
+            </h2>
+          </div>
+        </div>
+      </div>
 
     </header>
     <?php global $post; if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -121,7 +131,26 @@
     <script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri().'/'; ?>js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
     <script src="<?php echo get_template_directory_uri().'/'; ?>js/vendor/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
     <script src="<?php echo get_template_directory_uri().'/'; ?>js/plugins.js"></script>
+    <script src="<?php echo get_template_directory_uri().'/'; ?>js/vendor/vegas/dist/vegas.min.js"></script>
     <script src="<?php echo get_template_directory_uri().'/'; ?>js/main.js"></script>
+    <script >
+      jQuery(document).ready(function ($) {
+        /** */
+        $('#header').vegas({
+          transition: 'zoomOut2',
+          timer: false,
+          transitionDuration: 500,
+          slides: [
+            {src: '<?php echo get_template_directory_uri().'/'; ?>img/slides/home.jpg'},
+            {src: '<?php echo get_template_directory_uri().'/'; ?>img/slides/criacao-sites.jpg'},
+            {src: '<?php echo get_template_directory_uri().'/'; ?>img/slides/links-patrocinados.jpg'},
+            {src: '<?php echo get_template_directory_uri().'/'; ?>img/slides/social-marketing.jpg'},
+            {src: '<?php echo get_template_directory_uri().'/'; ?>img/slides/mobile.jpg'}
+          ]
+
+        });
+      });
+    </script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function (i, s, o, g, r, a, m) {
