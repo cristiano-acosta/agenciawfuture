@@ -54,7 +54,6 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-bars"></i>
               </a>
-<<<<<<< HEAD
                   <?php
 
                     wp_nav_menu( array(
@@ -72,14 +71,6 @@
                     ) );
 
                   ?>
-=======
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
->>>>>>> ae3156f6b267d5b606530687f72c4854d57af91f
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->
