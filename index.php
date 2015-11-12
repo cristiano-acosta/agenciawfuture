@@ -59,12 +59,25 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-bars"></i>
               </a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
+              <div class="dropdown-menu">
+                <?php
+
+                  wp_nav_menu( array(
+                    'theme_location'  => 'menu-topo',
+                    'depth'           => 2,
+                    'menu'            => '',
+                    'container'       => false,
+                    'container_class' => '',
+                    'container_id'    => '',
+                    'menu_class'      => 'nav navbar-nav navbar-right',
+                    'fallback_cb'     => 'wp_page_menu',
+                    'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                    //Process nav menu using our custom nav walker
+                    //'walker' => new wp_bootstrap_navwalker())
+                  ) );
+
+                ?>
+              </div>
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -86,7 +99,6 @@
 
         </section>
         <section id="blog">
-
         </section>
       </article>
     <?php endwhile; endif; wp_reset_query(); ?>
