@@ -54,9 +54,15 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-bars"></i>
               </a>
+<<<<<<< HEAD
                   <?php
 
                     wp_nav_menu( array(
+=======
+                <?php
+                  wp_nav_menu(
+                    array(
+>>>>>>> refs/remotes/origin/master
                       'theme_location'  => 'menu-topo',
                       'depth'           => 2,
                       'menu'            => '',
@@ -68,9 +74,15 @@
                       'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                       //Process nav menu using our custom nav walker
                       //'walker' => new wp_bootstrap_navwalker())
+<<<<<<< HEAD
                     ) );
 
                   ?>
+=======
+                    )
+                  );
+                ?>
+>>>>>>> refs/remotes/origin/master
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->
