@@ -12,72 +12,120 @@ Text Domain: twentyfourteen
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
-
 // Import Bootstrap Compass integration
 @import "bootstrap-compass";
-
 // Import custom Bootstrap variables
 @import "bootstrap-variables";
-
 // Import Bootstrap for Sass
 @import "bootstrap";
-
 // Import font-awesome
 @import "../js/vendor/font-awesome/scss/font-awesome";
-
 // Import animate css
 @import "js/vendor/animate.css/animate.min.css";
+<<<<<<< HEAD
 @import "js/vendor/vegas/dist/vegas.min.css";
-
-
 /* ==========================================================================
    Cristiano Acosta-
    ========================================================================== */
 /* Tags Ajusts */
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -moz-background-clip: padding-box !important;
-  -webkit-background-clip: padding-box !important;
-  background-clip: padding-box !important;
-  -webkit-transition: all 0.5s linear;
-  -moz-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
-  transition: all 0.5s linear;
-  &:before, &:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -moz-background-clip: padding-box !important;
-    -webkit-background-clip: padding-box !important;
-    background-clip: padding-box !important;
-    -webkit-transition: all 0.5s linear;
-    -moz-transition: all 0.5s linear;
-    -o-transition: all 0.5s linear;
-    transition: all 0.5s linear;
+
+/* variables */
+$height:615px;
+
+/* 1. navbar */
+nav#main-nav {
+  margin:65px 0 0 0;
+  .fa-bars {
+    &:before, &:after {
+      font-size:24px;
+      color:#fff;
+    }
+  }
+  .navbar-nav{
+    > li {
+      > a {
+        background-color:#106292;
+        color:#fff;
+        padding:10px 12px;
+        &:hover, &:focus {
+          background-color:#106292;
+          color:#fff;
+        }
+      }
+    }
+  }
+  @media (max-width: $grid-float-breakpoint-max) {
+    // Dropdowns get custom display when collapsed
+    .open .dropdown-menu {
+      background-color: $dropdown-bg;
+    }
   }
 }
-/* variables */
-$height: 615px;
-
 /* 1. header */
 header#header {
-  height: $height;
-  padding: ( ( $height - 90px ) / 2 ) 0;
+  height:$height;
+  padding:(( $height - 95px ) / 2) 0;
+  overflow:hidden;
+
   h2 {
     color:#fff;
-    margin: 20px  0 0 0;
+    margin:0;
     font-size:24px;
-    small {
+    text-transform: uppercase;
+    small, strong {
       display:block;
       color:#fff;
-      font-size:100%;
-    }
-    strong {
-      display:block;
-      color:#fff;
-      font-size:130%;
+      font-size: 4.5rem;
+      text-transform: uppercase;
+      font-weight: 600;
     }
   }
 }
+/* 2.Article */
+
+/* 2.1.Agencia */
+section#agencia {
+  height:$height;
+
+  overflow:hidden;
+  .container {
+    padding:(( $height - 133px ) / 2) 0;
+  }
+  .embed-responsive-16by9 {
+    padding-bottom:30%;
+  }
+  .fa{
+    margin-right: 8px;
+  }
+  h3{
+    color:#000000;
+    font-weight:400;
+  }
+  h2{
+    color:#000;
+    font-weight:600;
+    font-size: 28px;
+  }
+  .black{
+    color:#000;
+  }
+  p{
+    color:#999999;
+  }
+}
+
+/* 2.2.servicos */
+
+/* 2.3.projetos */
+
+/* 2.3.projetos */
+
+/* 2.3.blog */
+
+/* 3.Contato */
+
+/* 4.Footer */
+=======
+>>>>>>> ae3156f6b267d5b606530687f72c4854d57af91f
+
+

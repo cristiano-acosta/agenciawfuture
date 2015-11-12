@@ -42,29 +42,44 @@
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+
           <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>" title="<?php the_SEO( 'title', get_the_ID() ) ?>">
             <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/'; ?>img/agencia.png" alt="<?php the_SEO( 'title', get_the_ID() ) ?>" />
           </a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-main-collapse">
+        <div class=" navbar-collapse ">
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-bars"></i>
               </a>
+<<<<<<< HEAD
+                  <?php
+
+                    wp_nav_menu( array(
+                      'theme_location'  => 'menu-topo',
+                      'depth'           => 2,
+                      'menu'            => '',
+                      'container'       => false,
+                      'container_class' => '',
+                      'container_id'    => '',
+                      'menu_class'      => 'dropdown-menu',
+                      'fallback_cb'     => 'wp_page_menu',
+                      'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                      //Process nav menu using our custom nav walker
+                      //'walker' => new wp_bootstrap_navwalker())
+                    ) );
+
+                  ?>
+=======
               <ul class="dropdown-menu">
                 <li><a href="#">Action</a></li>
                 <li><a href="#">Another action</a></li>
                 <li><a href="#">Something else here</a></li>
                 <li><a href="#">Separated link</a></li>
               </ul>
+>>>>>>> ae3156f6b267d5b606530687f72c4854d57af91f
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -86,9 +101,39 @@
     <?php global $post; if (have_posts()) : while (have_posts()) : the_post(); ?>
       <article id="<?php the_slug(); ?>">
         <h1 class="hidden"><?php the_title() ?></h1>
-        <section id="about">
+        <?php
+          $pagename = 'agencia';
+          $Query = new WP_Query( array('post_type' => 'page','pagename' => $pagename, 'posts_per_page'=> 1 ));
+          if ( $Query->have_posts() ) : while ( $Query->have_posts() ) : $Query->the_post();
+        ?>
+          <section  id="<?php the_slug(); ?>">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-3">
+                  <h2 class="text-uppercase"><?php the_title(); ?></h2>
+                  <p class="black text-right">Criamos projetos de marketing digital focados em presença, audiência e resultados.</p>
+                </div>
+                <div class="col-md-3">
+                  <h3> <i class="fa fa-comments"></i>Colaboração</h3>
+                  <p >Focamos nossos projetos na colaboração contínua e mútua entre nossa equipe e nossos clientes.</p>
+                </div>
+                <div class="col-md-3">
+                  <h3> <i class="fa fa-heart"></i>Criação e Design</h3>
+                  <p >Criamos peças e conteúdos voltados para a identidade visual e a estética perfeita.</p>
+                </div>
+                <div class="col-md-3">
+                  <h3> <i class="fa fa-code"></i>Desenvolvimento</h3>
+                  <p >Usamos as melhores e mais modernas tecnologias da internet fazendo sites, lojas e aplicativos.</p>
+                </div>
+              </div>
+            </div>
+            <!-- 16:9 aspect ratio -->
+            <div class="embed-responsive embed-responsive-16by9 ">
+              <iframe class="embed-responsive-item"  height="300"  src="https://www.youtube.com/embed/KSAiR1RvrxA" allowfullscreen=""></iframe>
+            </div>
+          </section>
+        <?php endwhile; endif; wp_reset_query(); ?>
 
-        </section>
         <section id="servicos">
 
         </section>
@@ -120,7 +165,9 @@
         </div>
       </div>
       <div id="mapa">
-
+        <div class="embed-responsive embed-responsive-16by9 ">
+          <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13813.468480407986!2d-51.1471726!3d-30.0550096!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcda1e7a2aabc1955!2sAg%C3%AAncia+W+Future!5e0!3m2!1spt-BR!2sbr!4v1447350291905" allowfullscreen=""></iframe>
+        </div>
       </div>
       <div id="copy">
 
@@ -166,6 +213,23 @@
       })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
       ga('create', 'UA-56774533-1', 'auto');
       ga('send', 'pageview');
+    </script>
+    <script>
+      var offsetTopNav = $('#main-nav').offset().top;
+      $('#main-nav').affix({
+        offset: {
+          top: function () {
+            return offsetTopNav;
+          }
+        }
+      });
+      $(window).scroll(function () {
+        if ($(document).scrollTop() >= offsetTopNav) {
+          $('#main-nav').css('marginTop', 5);
+        } else if ($(document).scrollTop() <= offsetTopNav) {
+          $('#main-nav').css('marginTop', 65);
+        }
+      });
     </script>
   </body>
 </html>
