@@ -40,8 +40,10 @@
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
-
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500,700);
+@import url(https://fonts.googleapis.com/css?family=ABeeZee:400,400italic);
 // $font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif
+ $font-family-sans-serif:  'ABeeZee', "Helvetica Neue", Helvetica, Arial, sans-serif;
 // $font-family-serif:       Georgia, "Times New Roman", Times, serif
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 // $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace
@@ -65,6 +67,7 @@
 
 //** By default, this inherits from the `<body>`.
 // $headings-font-family:    inherit
+$headings-font-family:    'Ubuntu', 'ABeeZee', "Helvetica Neue", Helvetica, Arial, sans-serif;;
 // $headings-font-weight:    500
 // $headings-line-height:    1.1
 // $headings-color:          inherit
