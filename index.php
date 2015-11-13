@@ -44,7 +44,9 @@
         <div class="navbar-header">
 
           <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>" title="<?php the_SEO( 'title', get_the_ID() ) ?>">
-            <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/'; ?>img/agencia.png" alt="<?php the_SEO( 'title', get_the_ID() ) ?>" />
+            <img class="img-responsive hidden_on_scroll " src="<?php echo get_template_directory_uri() . '/'; ?>img/agencia.png" alt="<?php the_SEO( 'title', get_the_ID() ) ?>" />
+            <img class="img-responsive revel_on_scroll  hidden" src="<?php echo get_template_directory_uri() . '/'; ?>img/apple-touch-icon.png" alt="<?php the_SEO( 'title', get_the_ID() ) ?>" />
+
           </a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -204,23 +206,6 @@
       })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
       ga('create', 'UA-56774533-1', 'auto');
       ga('send', 'pageview');
-    </script>
-    <script>
-      var offsetTopNav = $('#main-nav').offset().top;
-      $('#main-nav').affix({
-        offset: {
-          top: function () {
-            return offsetTopNav;
-          }
-        }
-      });
-      $(window).scroll(function () {
-        if ($(document).scrollTop() >= offsetTopNav) {
-          $('#main-nav').css('marginTop', 5);
-        } else if ($(document).scrollTop() <= offsetTopNav) {
-          $('#main-nav').css('marginTop', 65);
-        }
-      });
     </script>
   </body>
 </html>

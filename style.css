@@ -5532,8 +5532,13 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
 
 /* ========================================================================== Cristiano Acosta- ========================================================================== */
 /* Tags Ajusts */
+/* line 31, sass/style.scss */
+body { overflow-x: hidden; }
+
 /* variables */
+/* mixins */
 /* 1. navbar */
+<<<<<<< HEAD
 /* line 39, sass/style.scss */
 nav#main-nav { margin: 65px 0 0 0; }
 /* line 42, sass/style.scss */
@@ -5551,10 +5556,34 @@ header#header { height: 615px; padding: 260px 0; overflow: hidden; }
 /* line 73, sass/style.scss */
 header#header h2 { color: #fff; margin: 0; font-size: 24px; text-transform: uppercase; }
 /* line 78, sass/style.scss */
+=======
+/* line 44, sass/style.scss */
+nav#main-nav { margin: 65px 0 0 0; }
+/* line 46, sass/style.scss */
+nav#main-nav.scroll_in { margin: 5px 0 0 0; background: rgba(34, 34, 34, 0.7); }
+/* line 51, sass/style.scss */
+nav#main-nav .fa-bars:before, nav#main-nav .fa-bars:after { font-size: 24px; color: #fff; }
+/* line 56, sass/style.scss */
+nav#main-nav .revel_on_scroll { height: 45px; width: 45px; }
+/* line 62, sass/style.scss */
+nav#main-nav .navbar-nav > li > a { background-color: #106292; color: #fff; padding: 10px 12px; }
+/* line 66, sass/style.scss */
+nav#main-nav .navbar-nav > li > a:hover, nav#main-nav .navbar-nav > li > a:focus { background-color: #0d537b; color: #fff; }
+@media (max-width: 767px) { /* line 75, sass/style.scss */
+  nav#main-nav .open .dropdown-menu { background-color: rgba(34, 34, 34, 0.7); } }
+
+/* 1. header */
+/* line 81, sass/style.scss */
+header#header { height: 615px; padding: 260px 0; overflow: hidden; }
+/* line 87, sass/style.scss */
+header#header h2 { color: #fff; margin: 0; font-size: 24px; text-transform: uppercase; }
+/* line 92, sass/style.scss */
+>>>>>>> refs/remotes/origin/master
 header#header h2 small, header#header h2 strong { display: block; color: #fff; font-size: 4.5rem; text-transform: uppercase; font-weight: 600; }
 
 /* 2.Article */
 /* 2.1.Agencia */
+<<<<<<< HEAD
 /* line 90, sass/style.scss */
 section#agencia { height: 615px; overflow: hidden; }
 /* line 94, sass/style.scss */
@@ -5570,6 +5599,23 @@ section#agencia h2 { color: #000; font-weight: 600; font-size: 28px; }
 /* line 112, sass/style.scss */
 section#agencia .black { color: #000; }
 /* line 115, sass/style.scss */
+=======
+/* line 104, sass/style.scss */
+section#agencia { height: 615px; overflow: hidden; }
+/* line 108, sass/style.scss */
+section#agencia .container { padding: 88.25px 0; }
+/* line 112, sass/style.scss */
+section#agencia .embed-responsive-16by9 { padding-bottom: 30%; }
+/* line 115, sass/style.scss */
+section#agencia .fa { margin-right: 8px; }
+/* line 118, sass/style.scss */
+section#agencia h3 { color: #000000; font-weight: 400; }
+/* line 122, sass/style.scss */
+section#agencia h2 { color: #000; font-weight: 600; font-size: 28px; }
+/* line 127, sass/style.scss */
+section#agencia .black { color: #000; }
+/* line 130, sass/style.scss */
+>>>>>>> refs/remotes/origin/master
 section#agencia p { color: #999999; }
 
 /* 2.2.servicos */
