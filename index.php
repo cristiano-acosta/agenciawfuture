@@ -104,7 +104,9 @@
               <div class="row">
                 <div class="col-md-3">
                   <h2 class="text-uppercase"><?php the_title(); ?></h2>
-                  <p class="black text-right">Criamos projetos de marketing digital focados em presença, audiência e resultados.</p>
+                  <p class="black text-right">
+                    Criamos projetos de marketing digital focados em presença, audiência e resultados.
+                  </p>
                 </div>
                 <div class="col-md-3">
                   <h3> <i class="fa fa-comments"></i>Colaboração</h3>
@@ -128,7 +130,41 @@
         <?php endwhile; endif; wp_reset_query(); ?>
 
         <section id="servicos">
+          <div class="container">
+            <div class="row">
+              <!-- TAB NAVIGATION -->
+              <ul class="col-md-3 nav nav-tabs" role="tablist">
+                <li class="active">
+                  <a href="#tab1" role="tab" data-toggle="tab">Tab1</a>
+                  
+                </li>
+                <li>
+                  <a href="#tab2" role="tab" data-toggle="tab">Tab2</a>
+                </li>
+                <li>
+                  <a href="#tab3" role="tab" data-toggle="tab">Tab3</a>
+                </li>
+              </ul>
+              <!-- TAB CONTENT -->
+              <div class="col-md-9 tab-content">
+                <div class="active tab-pane fade in" id="tab1">
+                  <h2>Tab1</h2>
 
+                  <p>Lorem ipsum.</p>
+                </div>
+                <div class="tab-pane fade" id="tab2">
+                  <h2>Tab2</h2>
+
+                  <p>Lorem ipsum.</p>
+                </div>
+                <div class="tab-pane fade" id="tab3">
+                  <h2>Tab3</h2>
+
+                  <p>Lorem ipsum.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
         <section id="projetos">
 
