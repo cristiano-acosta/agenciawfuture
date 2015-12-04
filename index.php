@@ -104,7 +104,9 @@
               <div class="row">
                 <div class="col-md-3">
                   <h2 class="text-uppercase"><?php the_title(); ?></h2>
-                  <p class="black text-right">Criamos projetos de marketing digital focados em presença, audiência e resultados.</p>
+                  <p class="black text-right">
+                    Criamos projetos de marketing digital focados em presença, audiência e resultados.
+                  </p>
                 </div>
                 <div class="col-md-3">
                   <h3> <i class="fa fa-comments"></i>Colaboração</h3>
@@ -130,10 +132,45 @@
         <section id="servicos">
           <div class="container">
             <div class="row">
+<<<<<<< HEAD
 
             </div>
           </div>
+=======
+              <!-- TAB NAVIGATION -->
+              <ul class="col-md-3 nav-tabs" role="tablist">
+                <?php
+                  $index = 0;
+                  $post_type = 'servicos';
+                $Query = new WP_Query(array('post_type' => $post_type, 'post_status' => 'publish', 'posts_per_page' => -1));
+                if ($Query->have_posts()) { while ($Query->have_posts()) : $Query->the_post();
+                  $index++
+                ?>
+                  <li class="<?php if ($index == 0 ) echo 'active' ?>">
+                    <a href="#<?php the_slug() ?>" role="tab" data-toggle="tab"><?php the_title() ?></a>
+                    <?php the_excerpt_limited(24) ?>
+                  </li>
+                <?php endwhile; }  wp_reset_query(); ?>
+>>>>>>> refs/remotes/origin/master
 
+
+              </ul>
+              <!-- TAB CONTENT -->
+              <div class="col-md-9 tab-content">
+                <?php
+                  $index = 0;
+                  $post_type = 'servicos';
+                  $Query = new WP_Query(array('post_type' => $post_type, 'post_status' => 'publish', 'posts_per_page' => -1));
+                  if ($Query->have_posts()) { while ($Query->have_posts()) : $Query->the_post();
+                    $index++
+                    ?>
+                    <div class="<?php if ($index == 0 ) echo 'active' ?> tab-pane fade in" id="<?php the_slug() ?>">
+                      <h2><?php the_title() ?></h2>
+                    </div>
+                  <?php endwhile; }  wp_reset_query(); ?>
+              </div>
+            </div>
+          </div>
         </section>
         <section id="projetos">
 
