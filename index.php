@@ -141,9 +141,11 @@
                 if ($Query->have_posts()) { while ($Query->have_posts()) : $Query->the_post();
                   $index++
                 ?>
-                  <li class="<?php if ($index == 0 ) echo 'active' ?>">
-                    <a href="#<?php the_slug() ?>" role="tab" data-toggle="tab"><?php the_title() ?></a>
-                    <?php the_excerpt_limited(24) ?>
+                  <li class="<?php if ($index == 1 ) echo 'active' ?>">
+                    <a href="#<?php the_slug() ?>" role="tab" data-toggle="tab">
+                      <h2><?php the_title() ?></h2>
+                      <p><?php the_excerpt_limited(24) ?></p>
+                    </a>cd
                   </li>
                 <?php endwhile; }  wp_reset_query(); ?>
 
@@ -158,7 +160,7 @@
                   if ($Query->have_posts()) { while ($Query->have_posts()) : $Query->the_post();
                     $index++
                     ?>
-                    <div class="<?php if ($index == 0 ) echo 'active' ?> tab-pane fade in" id="<?php the_slug() ?>">
+                    <div class="<?php if ($index == 1 ) echo 'active' ?> tab-pane fade in" id="<?php the_slug() ?>">
                       <h2><?php the_title() ?></h2>
                     </div>
                   <?php endwhile; }  wp_reset_query(); ?>
