@@ -128,6 +128,11 @@
         <?php endwhile; endif; wp_reset_query(); ?>
 
         <section id="servicos">
+          <div class="container">
+            <div class="row">
+
+            </div>
+          </div>
 
         </section>
         <section id="projetos">
@@ -209,3 +214,5 @@
     </script>
   </body>
 </html>
+
+
