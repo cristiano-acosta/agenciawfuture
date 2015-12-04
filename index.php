@@ -132,11 +132,9 @@
         <section id="servicos">
           <div class="container">
             <div class="row">
-<<<<<<< HEAD
 
             </div>
           </div>
-=======
               <!-- TAB NAVIGATION -->
               <ul class="col-md-3 nav-tabs" role="tablist">
                 <?php
@@ -151,7 +149,6 @@
                     <?php the_excerpt_limited(24) ?>
                   </li>
                 <?php endwhile; }  wp_reset_query(); ?>
->>>>>>> refs/remotes/origin/master
 
 
               </ul>
