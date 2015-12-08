@@ -104,7 +104,7 @@
               <div class="row">
                 <div class="col-md-3">
                   <h2 class="text-uppercase"><?php the_title(); ?></h2>
-                  <p class="black text-right">
+                  <p class="text-right">
                     Criamos projetos de marketing digital focados em presença, audiência e resultados.
                   </p>
                 </div>
@@ -133,42 +133,133 @@
           <div class="container">
             <div class="row">
               <!-- TAB NAVIGATION -->
-              <ul class="col-md-3 nav-tabs" role="tablist">
+              <ul class="col-md-3 col-equalizer tabs" role="tablist">
+                <li class="list-unstyled">
+                  <h2>
+                    <?php
+                      $obj = get_post_type_object( 'servicos' );
+                      echo $obj->labels->singular_name;
+                    ?>
+                  </h2>
+                </li>
                 <?php
                   $index = 0;
                   $post_type = 'servicos';
-                $Query = new WP_Query(array('post_type' => $post_type, 'post_status' => 'publish', 'posts_per_page' => -1));
+                $Query = new WP_Query(array('post_type' => $post_type, 'post_status' => 'publish', 'orderby'=>'menu_order','order'=>'ASC', 'post_parent' => 0, 'posts_per_page' => -1 ));
                 if ($Query->have_posts()) { while ($Query->have_posts()) : $Query->the_post();
-                  $index++
+                  $index++;
                 ?>
-                  <li class="<?php if ($index == 1 ) echo 'active' ?>">
+                  <li class="<?php if ($index == 1 ) echo 'active' ?> list-unstyled ">
                     <a href="#<?php the_slug() ?>" role="tab" data-toggle="tab">
-                      <h2><?php the_title() ?></h2>
+                      <h3><?php the_title() ?></h3>
                       <p><?php the_excerpt_limited(24) ?></p>
-                    </a>cd
+                    </a>
                   </li>
                 <?php endwhile; }  wp_reset_query(); ?>
-
-
               </ul>
               <!-- TAB CONTENT -->
-              <div class="col-md-9 tab-content">
+              <div class="col-md-9 col-equalizer tab-content">
                 <?php
                   $index = 0;
                   $post_type = 'servicos';
-                  $Query = new WP_Query(array('post_type' => $post_type, 'post_status' => 'publish', 'posts_per_page' => -1));
+                  $Query = new WP_Query(array('post_type' => $post_type, 'post_status' => 'publish', 'orderby'=>'menu_order','order'=>'ASC', 'post_parent' => 0, 'posts_per_page' => -1 ));
                   if ($Query->have_posts()) { while ($Query->have_posts()) : $Query->the_post();
-                    $index++
-                    ?>
-                    <div class="<?php if ($index == 1 ) echo 'active' ?> tab-pane fade in" id="<?php the_slug() ?>">
-                      <h2><?php the_title() ?></h2>
+                    $index++;
+                ?>
+                  <div class="<?php if ($index == 1 ) echo 'active' ?> tab-pane fade in" id="<?php the_slug() ?>">
+                    <h2 class="hidden"><?php the_title() ?></h2>
+                    <?php if (get_post_meta( get_the_ID(), 'wpcf-bg-paralax', true )) { ?>
+                      <div class="bg-paralax" style="background-image: url('<?php echo get_post_meta( get_the_ID(), 'wpcf-bg-paralax', true ); ?>');"></div>
+                    <?php }  ?>
+                    <div class="row">
+                      <?php
+                          $args = array(
+                            'numberposts' => 3,
+                            'order' => 'ASC',
+                            'orderby'=>'menu_order',
+                            'post_parent' => get_the_ID(),
+                            'post_status' => null,
+                            'post_type' => $post_type,
+                          );
+                          $childrens = get_children( $args );
+
+                          if ( $childrens ) {
+                            foreach ( $childrens as $children ) {
+                              ?>
+                              <div class="col-md-4">
+                                <ul class="diamonds ">
+                                  <?php
+                                    $term_list = wp_get_post_terms($children->ID, 'icones', array( 'orderby' => 'name', 'order' => 'ASC', "fields" => "all"));
+                                    foreach( $term_list as $term ){
+                                      ?>
+                                      <li>
+                                        <a href="#<?php print_r($term->slug) ?>" class="diamond">
+                                          <div class="diamond-content">
+                                            <h4>
+                                              <?php echo tax_icons_output_term_icon($term->term_id, '' ); ?>
+                                              <?php print_r($term->name) ?>
+                                            </h4>
+                                          </div>
+                                        </a>
+                                      </li>
+                                    <?php } ?>
+
+                                </ul>
+                                <h3 class="clearfix"><?php print_r($children->post_title) ?></h3>
+                              </div>
+                              <?
+                            }
+                          }
+                      ?>
                     </div>
-                  <?php endwhile; }  wp_reset_query(); ?>
+                  </div>
+                <?php endwhile; }  wp_reset_query(); ?>
               </div>
             </div>
           </div>
         </section>
         <section id="projetos">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                  </ol>
+
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                      <img src="..." alt="...">
+                      <div class="carousel-caption">
+                        ...
+                      </div>
+                    </div>
+                    <div class="item">
+                      <img src="..." alt="...">
+                      <div class="carousel-caption">
+                        ...
+                      </div>
+                    </div>
+                    ...
+                  </div>
+
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
 
         </section>
         <section id="blog">
@@ -182,6 +273,18 @@
           <div class="row">
             <div class="col-md-3">
               <h2>Entre em contato</h2>
+              <div itemscope itemtype="http://schema.org/LocalBusiness">
+                <h3><span itemprop="name"><?php bloginfo('name') ?></span></h3>
+                <span itemprop="description"><?php bloginfo('description') ?></span>
+                <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                  <p itemprop="streetAddress">Av. Antonio de Carvalho, 1625 CJ 301</p>
+                  <p itemprop="addressLocality">Porto Alegre</p>,
+                  <abbr itemprop="addressRegion" title="Rio Grande do Sul">RS</abbr>
+                </address>
+                <a href="mailto:marketing@agenciawfuture.com.br" itemprop="email">marketing@agenciawfuture.com.br</a>
+                <a href="tel:+555137790313" itemprop="telephone">51.3779-0313</a>
+                <a HREF="tel:+554833641544" itemprop="telephone">48.3364-1544</a>
+              </div>
             </div>
             <div class="col-md-8">
               <h3>Faça agora um contato</h3>

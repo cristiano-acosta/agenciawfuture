@@ -12,6 +12,8 @@ Text Domain: twentyfourteen
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+// Import Compass CSS3
+@import "compass/css3";
 // Import Bootstrap Compass integration
 @import "bootstrap-compass";
 // Import custom Bootstrap variables
@@ -24,13 +26,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import "js/vendor/animate.css/animate.min.css";
 // Import vegas js css
 @import "js/vendor/vegas/dist/vegas.min.css";
+
 /* ==========================================================================
    Cristiano Acosta-
    ========================================================================== */
-/* Tags Ajusts */
-body {
-  overflow-x: hidden;
-}
 /* variables */
 $height:615px;
 
@@ -40,6 +39,250 @@ $bg_azul: #106292 ;
 @mixin vertical_center_padding ($height_content, $height_elemento) {
   padding: ( ( $height_content - $height_elemento ) / 2 ) 0;
 }
+// generic transform
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+// rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+// scale
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+// translate
+@mixin translate ($x, $y) {
+  @include transform(translate($x, $y));
+}
+// skew
+@mixin skew ($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+//transform origin
+@mixin transform-origin ($origin) {
+  moz-transform-origin: $origin;
+  -o-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+  transform-origin: $origin;
+}
+
+/* Tags Ajusts */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  /*@include transition-property(all);
+  @include transition-duration(0.5s);
+  @include transition-timing-function(ease-in);*/
+  @include transition(compact(all 0.5s linear 0));
+  &:before, &:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-background-clip: padding-box !important;
+    -webkit-background-clip: padding-box !important;
+    background-clip: padding-box !important;
+    @include transition(compact(all 0.5s linear 0));
+  }
+}
+
+body {
+  overflow-x: hidden;
+  @include transition(compact(all 0.5s linear 0));
+}
+/* 0. comum classes */
+.bg-paralax {
+  position:absolute;
+  width:100%;
+  height:100%;
+  padding:0;
+  margin:0;
+  background-size:cover;
+  left:0;
+  top:0;
+  z-index:0;
+}
+.tabs {
+  h2 {
+    margin:0;
+  }
+
+  li {
+    &:hover, &:focus{
+      a{
+        color:#fffffe;
+      }
+    }
+    &.active {
+      a {
+        border:none;
+        color:#ffffff;
+      }
+    }
+    a {
+      border:none;
+      color:#1d1d1d;
+      text-transform:none;
+      text-decoration:none;
+    }
+  }
+}
+/* @group mixins */
+@mixin respond-to($query) {
+  @media only screen and #{$query}  {
+    @content
+  }
+}
+
+@mixin diamond-grid-breakpoint($query, $maxWidth, $n, $maxRow) {
+  @include respond-to(#{$query}) {
+      li {
+        /*&:nth-child(#{$n}n+#{$maxRow + 1}) {
+          margin-left:128px !important;
+          margin-top:-24px !important;
+        }
+        &:nth-child(#{$n}n+#{$maxRow}) {
+          margin-right: 0;
+        }*/
+        &:nth-child(n+#{$maxRow}) {
+            margin-left: 62px;
+            margin-top: -22px;
+        }
+        &:nth-child(n+#{$maxRow + 1}) {
+            margin: 0;
+        }
+      }
+  }
+}
+/* @end */
+
+/* @group diamonds */
+$diamondSize: 90px;
+$belowDiamondSize: 60px;
+$diamondQuery1: '(min-width: 1348px)';
+$diamondQuery2: '(max-width: 1347px) and (min-width: 1078px)';
+$diamondQuery3: '(max-width: 1077px) and (min-width: 808px)';
+$diamondQuery4: '(max-width: 807px) and (min-width: 538px)';
+$belowDiamond: '(max-width: 537px)';
+.diamonds {
+  font-size: 0;
+  margin: 40px auto;
+  @include diamond-grid-breakpoint($query: $diamondQuery1, $maxWidth: 1270px, $n: 2, $maxRow: 3);
+  @include diamond-grid-breakpoint($query: $diamondQuery2, $maxWidth: 1000px, $n: 2, $maxRow: 3);
+  @include diamond-grid-breakpoint($query: $diamondQuery3, $maxWidth: 730px, $n: 2, $maxRow: 3);
+  @include diamond-grid-breakpoint($query: $diamondQuery4, $maxWidth: 460px, $n: 2, $maxRow: 3);
+    padding: 39px 0;
+    @include respond-to($belowDiamond) {
+      padding: 0;
+      text-align: center;
+    }
+    max-width: 1060px;
+  > li {
+    display: inline-block;
+    font-size: 18px;
+    margin-right: 35px;
+    @include respond-to($belowDiamond) {
+      margin-right: 0;
+      width: $belowDiamondSize;
+    }
+  }
+  .diamond {
+    @include backface-visibility(hidden);
+    background: transparentize( #000000, .3);
+    color: #ffffff;
+    display: block;
+    height: $diamondSize;
+    overflow: hidden;
+    @include perspective(1000);
+    position: relative;
+    text-decoration: none;
+    width: $diamondSize;
+    @include rotate(-45);
+      @include respond-to($belowDiamond) {
+        height: $belowDiamondSize;
+        @include rotate(0);
+        width: $belowDiamondSize;
+      }
+  }
+  .diamond-content {
+    display: table-cell;
+    height: $diamondSize;
+    padding: 0 10px;
+    @include rotate(45);
+    text-align: center;
+    vertical-align: middle;
+    width: $diamondSize;
+    @include respond-to($belowDiamond) {
+        height: $belowDiamondSize;
+        @include rotate(0);
+        width: $belowDiamondSize;
+    }
+    h4 {
+      font-size:14px;
+      color:#fff;
+      line-height:16px;
+      margin:0;
+      position:relative;
+      z-index:99;
+    }
+    i {
+      font-size:16px; padding:0; margin:0 auto 10px auto; display:block; position:relative;
+    }
+  }
+}
+/* @end */
+/*.diamond-grid {
+  $height:90px;
+  $width:90px;
+  height:$height;
+  width:$width;
+  //padding:( ( $height_content - $height_elemento ) / 2 );
+  display:table;
+  float:left;
+  margin:10px;
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+  background: transparentize( #000000, .3);
+  @include rotate(45);
+  &:nth-child(17n+10) {
+    margin-left: 167px
+  }
+  &:nth-child(n+10) {
+    margin-top: -47px
+  }
+
+  &:hover, &:focus{
+    background: transparentize( #000000, .4);
+    @include rotate(-45);
+  }
+  .diamond-text {
+    @include rotate(-45);
+    display: table-cell;
+    vertical-align: middle;
+    margin:0;
+  }
+  h4 {
+    font-size:14px;
+    color:#fff;
+    line-height:16px;
+    margin:0;
+    position:relative;
+    z-index:99;
+  }
+  i {
+    font-size:16px; padding:0; margin:0 auto 10px auto; display:block; position:relative;
+  }
+}*/
 /* 1. navbar */
 nav#main-nav {
   margin:65px 0 0 0;
@@ -103,7 +346,6 @@ header#header {
 /* 2.1.Agencia */
 section#agencia {
   height:$height;
-
   overflow:hidden;
   .container {
     //padding:(( $height - 133px ) / 2) 0;
@@ -124,7 +366,7 @@ section#agencia {
     font-weight:600;
     font-size: 28px;
   }
-  .black{
+  .text-black{
     color:#000;
   }
   p{
@@ -133,6 +375,40 @@ section#agencia {
 }
 
 /* 2.2.servicos */
+section#servicos {
+  height:$height;
+  background:#000000;
+  overflow:hidden;
+  .row{
+    z-index:999;
+  }
+  .tab-pane .row {
+    @include vertical_center_padding( ( $height / 2 ) , 490px );
+  }
+  .col-equalizer {
+    height:$height;
+  }
+  .tabs {
+    @include vertical_center_padding( ( $height / 2 ) , 150px );
+    li {
+      width:95%;
+    }
+  }
+  .content {
+    @include vertical_center_padding( ( $height / 2 ) , 150px );
+  }
+  h2 {
+      font-size: 28px;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 1.2;
+    margin:0;
+  }
+  h3 {
+    color:#ffffff;
+    font-size:24px;
+  }
+}
 
 /* 2.3.projetos */
 
@@ -143,3 +419,6 @@ section#agencia {
 /* 3.Contato */
 
 /* 4.Footer */
+footer#footer {
+
+}
