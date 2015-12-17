@@ -466,6 +466,13 @@ footer#footer {
         resize:none;
         height:60px;
       }
+      button {
+        padding:6px 0 6px 12px;
+        background:none;
+        color:#000000;
+        @include border-radius(0px, 0px);
+        @include box-shadow(none);
+      }
       input[type="submit"] {
         padding:6px 0 6px 12px;
         background:none;
@@ -473,15 +480,117 @@ footer#footer {
         @include border-radius(0px, 0px);
         @include box-shadow(none);
         &:before {
+<<<<<<< HEAD
+=======
+          position:relative;
+>>>>>>> refs/remotes/origin/master
           display: inline-block;
           font: normal normal normal #{$fa-font-size-base}/#{$fa-line-height-base} FontAwesome; // shortening font declaration
           font-size: inherit; // can't have font-size inherit on line above, so need to override
           text-rendering: auto; // optimizelegibility throws things off #1094
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
+<<<<<<< HEAD
           content: "\f003";
+=======
+          content: "\f0e0";
+>>>>>>> refs/remotes/origin/master
         }
       }
+
+
+    }
+    div.wpcf7 {
+      margin: 0;
+      padding: 0;
+      .screen-reader-response {
+        position: absolute;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+        height: 1px;
+        width: 1px;
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+      img.ajax-loader {
+        border: none;
+        vertical-align: middle;
+        margin-left: 4px;
+      }
+      div.ajax-error {
+        display: none;
+      }
+      .placeheld {
+        color: #888;
+      }
+    }
+    div.wpcf7-response-output {
+      //margin: 2em 0.5em 1em;
+     // padding: 0.2em 1em;
+      font-size: 75% !important;
+    }
+    div.wpcf7-mail-sent-ok {
+      //border: 2px solid #3c763d;
+      color:#3c763d;
+    }
+    div.wpcf7-mail-sent-ng {
+      //border: 2px solid #ff0000;
+      color:#ff0000;
+    }
+    div.wpcf7-spam-blocked {
+      //border: 2px solid #ffa500;
+      color:#8a6d3b;
+    }
+    div.wpcf7-validation-errors {
+      //border: 2px solid #f7e700;
+      color:#a94442;
+
+    }
+    .wpcf7-form-control-wrap {
+      position: relative;
+    }
+    span.wpcf7-not-valid-tip {
+      @include label-variant($label-danger-bg);
+      border: none !important;
+      left: 20%;
+      font-size: 75% !important;
+      font-weight: bold;
+      line-height: 1;
+      position: absolute;
+      color: $label-color !important;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: baseline;
+      @include border-radius(.25em, .25em);
+      top: 20%;
+      z-index: 100;
+      padding: .2em .6em .3em !important;
+    }
+    .use-floating-validation-tip {
+      span.wpcf7-not-valid-tip {
+        @include label-variant($label-danger-bg);
+        border: none !important;
+        left: 20%;
+        font-size: 75% !important;
+        font-weight: bold;
+        line-height: 1;
+        position: absolute;
+        color: $label-color !important;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        @include border-radius(.25em, .25em);
+        top: 20%;
+        z-index: 100;
+        padding: .2em .6em .3em !important;
+      }
+    }
+    span.wpcf7-list-item {
+      margin-left: 0.5em;
+    }
+    .wpcf7-display-none {
+      display: none;
     }
   }
   #mapa {
