@@ -21,8 +21,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import url(js/vendor/animate.css/animate.min.css);
 @import url(js/vendor/vegas/dist/vegas.min.css);
+@import url(js/vendor/animate.css/animate.min.css);
 /* line 9, js/vendor/bootstrap-sass/assets/stylesheets/bootstrap/_normalize.scss */
 html { font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
 
@@ -178,7 +178,7 @@ td, th { padding: 0; }
   .table td, .table th { background-color: #fff !important; }
   /* line 94, js/vendor/bootstrap-sass/assets/stylesheets/bootstrap/_print.scss */
   .table-bordered th, .table-bordered td { border: 1px solid #ddd !important; } }
-@font-face { font-family: 'Glyphicons Halflings'; src: url(fonts/bootstrap/glyphicons-halflings-regular.eot?1447086761); src: url(fonts/bootstrap/glyphicons-halflings-regular.eot?&1447086761#iefix) format("embedded-opentype"), url(fonts/bootstrap/glyphicons-halflings-regular.woff2?1447086761) format("woff2"), url(fonts/bootstrap/glyphicons-halflings-regular.woff?1447086761) format("woff"), url(fonts/bootstrap/glyphicons-halflings-regular.ttf?1447086761) format("truetype"), url(fonts/bootstrap/glyphicons-halflings-regular.svg?1447086761#glyphicons_halflingsregular) format("svg"); }
+@font-face { font-family: 'Glyphicons Halflings'; src: url(fonts/bootstrap/glyphicons-halflings-regular.eot?1447096996); src: url(fonts/bootstrap/glyphicons-halflings-regular.eot?&1447096996#iefix) format("embedded-opentype"), url(fonts/bootstrap/glyphicons-halflings-regular.woff2?1447096996) format("woff2"), url(fonts/bootstrap/glyphicons-halflings-regular.woff?1447096996) format("woff"), url(fonts/bootstrap/glyphicons-halflings-regular.ttf?1447096996) format("truetype"), url(fonts/bootstrap/glyphicons-halflings-regular.svg?1447096996#glyphicons_halflingsregular) format("svg"); }
 /* line 24, js/vendor/bootstrap-sass/assets/stylesheets/bootstrap/_glyphicons.scss */
 .glyphicon { position: relative; top: 1px; display: inline-block; font-family: 'Glyphicons Halflings'; font-style: normal; font-weight: normal; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
@@ -5644,20 +5644,36 @@ nav#main-nav .navbar-nav > li > a:hover, nav#main-nav .navbar-nav > li > a:focus
   nav#main-nav .open .dropdown-menu { background-color: rgba(34, 34, 34, 0.7); } }
 
 /* 1. header */
+<<<<<<< HEAD
+/* line 81, sass/style.scss */
+header#header { height: 615px; padding: 260px 0; overflow: hidden; }
+/* line 86, sass/style.scss */
+header#header h2 { color: #fff; margin: 0; font-size: 24px; text-transform: uppercase; }
+/* line 91, sass/style.scss */
+=======
 /* line 340, sass/style.scss */
 header#header { height: 768px; padding: 336.5px 0; overflow: hidden; }
 /* line 345, sass/style.scss */
 header#header h2 { color: #fff; margin: 0; font-size: 24px; text-transform: uppercase; }
 /* line 350, sass/style.scss */
+>>>>>>> refs/remotes/origin/master
 header#header h2 small, header#header h2 strong { display: block; color: #fff; font-size: 4.5rem; text-transform: uppercase; font-weight: 600; }
 
 /* 2.Article */
 /* 2.1.Agencia */
+<<<<<<< HEAD
+/* line 103, sass/style.scss */
+section#agencia { height: 615px; overflow: hidden; }
+/* line 107, sass/style.scss */
+section#agencia .container { padding: 262.5px 0; padding: 88.25px 0; }
+/* line 112, sass/style.scss */
+=======
 /* line 362, sass/style.scss */
 section#agencia { height: 768px; overflow: hidden; }
 /* line 365, sass/style.scss */
 section#agencia .container { padding: 126.5px 0; }
 /* line 369, sass/style.scss */
+>>>>>>> refs/remotes/origin/master
 section#agencia .embed-responsive-16by9 { padding-bottom: 30%; }
 /* line 372, sass/style.scss */
 section#agencia .fa { margin-right: 8px; }

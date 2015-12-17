@@ -70,9 +70,9 @@
                       'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                       //Process nav menu using our custom nav walker
                       //'walker' => new wp_bootstrap_navwalker())
-                    )
-                  );
-                ?>
+                    ) );
+
+                  ?>
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -132,6 +132,9 @@
         <section id="servicos">
           <div class="container">
             <div class="row">
+
+            </div>
+          </div>
               <!-- TAB NAVIGATION -->
               <ul class="col-md-3 tabs" role="tablist">
                 <li class="list-unstyled">
@@ -422,3 +425,5 @@
     </script>
   </body>
 </html>
+
+
