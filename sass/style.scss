@@ -470,6 +470,9 @@ footer#footer {
         color:#000000;
         @include border-radius(0px, 0px);
         @include box-shadow(none);
+        i {
+          color:#106293;
+        }
       }
       input[type="submit"] {
         padding:6px 0 6px 12px;
