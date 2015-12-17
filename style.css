@@ -1,103 +1,18 @@
+@charset "UTF-8";
 /*
-<<<<<<< HEAD
-Error: Invalid CSS after "...sition:relative": expected "{", was ";"
-        on line 485 of C:/wamp/www/agencia/site2/wp-content/themes/agenciawfuture/sass/style.scss
-
-480:         @include border-radius(0px, 0px);
-481:         @include box-shadow(none);
-482:         &:before {
-483: <<<<<<< HEAD
-484: =======
-485:           position:relative;
-486: >>>>>>> refs/remotes/origin/master
-487:           display: inline-block;
-488:           font: normal normal normal #{$fa-font-size-base}/#{$fa-line-height-base} FontAwesome; // shortening font declaration
-489:           font-size: inherit; // can't have font-size inherit on line above, so need to override
-490:           text-rendering: auto; // optimizelegibility throws things off #1094
-
-Backtrace:
-C:/wamp/www/agencia/site2/wp-content/themes/agenciawfuture/sass/style.scss:485
-=======
-Error: Invalid CSS after "...nimate.min.css"": expected "{", was ";"
-        on line 29 of C:/wamp/www/agencia/site2/wp-content/themes/agenciawfuture/sass/style.scss
-
-24: @import "../js/vendor/font-awesome/scss/font-awesome";
-25: // Import animate css
-26: // Import vegas js css
-27: @import "js/vendor/vegas/dist/vegas.min.css";
-28: <<<<<<< HEAD
-29: @import "js/vendor/animate.css/animate.min.css";
-30: =======
-31: 
-32: >>>>>>> refs/remotes/origin/master
-33: /* ==========================================================================
-34:    Cristiano Acosta-
-
-Backtrace:
-C:/wamp/www/agencia/site2/wp-content/themes/agenciawfuture/sass/style.scss:29
->>>>>>> refs/remotes/origin/master
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1161:in `expected'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1097:in `expected'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1092:in `tok!'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:637:in `block'
-<<<<<<< HEAD
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:707:in `declaration_or_ruleset'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:657:in `block_child'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:646:in `block_contents'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:638:in `block'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:707:in `declaration_or_ruleset'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:657:in `block_child'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:649:in `block_contents'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:638:in `block'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:707:in `declaration_or_ruleset'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:657:in `block_child'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:649:in `block_contents'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:638:in `block'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:707:in `declaration_or_ruleset'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:657:in `block_child'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:649:in `block_contents'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:638:in `block'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:707:in `declaration_or_ruleset'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:657:in `block_child'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:649:in `block_contents'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:638:in `block'
-=======
->>>>>>> refs/remotes/origin/master
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:631:in `ruleset'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:656:in `block_child'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:649:in `block_contents'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:117:in `stylesheet'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:42:in `parse'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/engine.rb:403:in `_to_tree'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/engine.rb:278:in `render'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:16:in `render'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:328:in `block in watch'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:252:in `call'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+Theme Name: Agencia Wfuture 2016
+Theme URI: agenciawfuture.com.br
+Author: Cristiano Acosta, Brunna Paulos
+Author URI: agenciawfuture.com.br
+Description:
+Version: 2016.0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, green, white, light, dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready
+Text Domain: twentyfourteen
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
 */
-<<<<<<< HEAD
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"...sition:relative\": expected \"{\", was \";\"\A         on line 485 of C:/wamp/www/agencia/site2/wp-content/themes/agenciawfuture/sass/style.scss\A \A 480:         @include border-radius(0px, 0px);\A 481:         @include box-shadow(none);\A 482:         &:before {\A 483: <<<<<<< HEAD\A 484: =======\A 485:           position:relative;\A 486: >>>>>>> refs/remotes/origin/master\A 487:           display: inline-block;\A 488:           font: normal normal normal #{$fa-font-size-base}/#{$fa-line-height-base} FontAwesome; // shortening font declaration\A 489:           font-size: inherit; // can't have font-size inherit on line above, so need to override\A 490:           text-rendering: auto; // optimizelegibility throws things off #1094"; }
-=======
-<<<<<<< HEAD
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"...nimate.min.css\"\": expected \"{\", was \";\"\A         on line 29 of C:/wamp/www/agencia/site2/wp-content/themes/agenciawfuture/sass/style.scss\A \A 24: @import \"../js/vendor/font-awesome/scss/font-awesome\";\A 25: // Import animate css\A 26: // Import vegas js css\A 27: @import \"js/vendor/vegas/dist/vegas.min.css\";\A 28: <<<<<<< HEAD\A 29: @import \"js/vendor/animate.css/animate.min.css\";\A 30: =======\A 31: \A 32: >>>>>>> refs/remotes/origin/master\A 33: /* ==========================================================================\A 34:    Cristiano Acosta-"; }
-=======
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500,700);
 @import url(https://fonts.googleapis.com/css?family=ABeeZee:400,400italic);
 /*!
@@ -106,8 +21,8 @@ body:before {
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import url(js/vendor/animate.css/animate.min.css);
 @import url(js/vendor/vegas/dist/vegas.min.css);
+@import url(js/vendor/animate.css/animate.min.css);
 /* line 9, js/vendor/bootstrap-sass/assets/stylesheets/bootstrap/_normalize.scss */
 html { font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
 
@@ -263,7 +178,7 @@ td, th { padding: 0; }
   .table td, .table th { background-color: #fff !important; }
   /* line 94, js/vendor/bootstrap-sass/assets/stylesheets/bootstrap/_print.scss */
   .table-bordered th, .table-bordered td { border: 1px solid #ddd !important; } }
-@font-face { font-family: 'Glyphicons Halflings'; src: url(fonts/bootstrap/glyphicons-halflings-regular.eot?1447086761); src: url(fonts/bootstrap/glyphicons-halflings-regular.eot?&1447086761#iefix) format("embedded-opentype"), url(fonts/bootstrap/glyphicons-halflings-regular.woff2?1447086761) format("woff2"), url(fonts/bootstrap/glyphicons-halflings-regular.woff?1447086761) format("woff"), url(fonts/bootstrap/glyphicons-halflings-regular.ttf?1447086761) format("truetype"), url(fonts/bootstrap/glyphicons-halflings-regular.svg?1447086761#glyphicons_halflingsregular) format("svg"); }
+@font-face { font-family: 'Glyphicons Halflings'; src: url(fonts/bootstrap/glyphicons-halflings-regular.eot?1447096996); src: url(fonts/bootstrap/glyphicons-halflings-regular.eot?&1447096996#iefix) format("embedded-opentype"), url(fonts/bootstrap/glyphicons-halflings-regular.woff2?1447096996) format("woff2"), url(fonts/bootstrap/glyphicons-halflings-regular.woff?1447096996) format("woff"), url(fonts/bootstrap/glyphicons-halflings-regular.ttf?1447096996) format("truetype"), url(fonts/bootstrap/glyphicons-halflings-regular.svg?1447096996#glyphicons_halflingsregular) format("svg"); }
 /* line 24, js/vendor/bootstrap-sass/assets/stylesheets/bootstrap/_glyphicons.scss */
 .glyphicon { position: relative; top: 1px; display: inline-block; font-family: 'Glyphicons Halflings'; font-style: normal; font-weight: normal; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
@@ -5617,41 +5532,41 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
 /* variables */
 /* mixins */
 /* Tags Ajusts */
-/* line 76, sass/style.scss */
+/* line 77, sass/style.scss */
 * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -moz-background-clip: padding-box !important; -webkit-background-clip: padding-box !important; background-clip: padding-box !important; /*@include transition-property(all);
 @include transition-duration(0.5s);
 @include transition-timing-function(ease-in);*/ -webkit-transition: all 0.5s linear 0; -o-transition: all 0.5s linear 0; transition: all 0.5s linear 0; }
-/* line 87, sass/style.scss */
+/* line 88, sass/style.scss */
 *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -moz-background-clip: padding-box !important; -webkit-background-clip: padding-box !important; background-clip: padding-box !important; -webkit-transition: all 0.5s linear 0; -o-transition: all 0.5s linear 0; transition: all 0.5s linear 0; }
 
-/* line 98, sass/style.scss */
+/* line 99, sass/style.scss */
 body { overflow-x: hidden; -webkit-transition: all 0.5s linear 0; -o-transition: all 0.5s linear 0; transition: all 0.5s linear 0; }
 
 /* 0. comum classes */
-/* line 103, sass/style.scss */
+/* line 104, sass/style.scss */
 .bg-paralax { position: absolute; width: 100%; height: 100%; padding: 0; margin: 0; background-size: cover; left: 0; top: 0; z-index: 0; }
 
-/* line 115, sass/style.scss */
+/* line 116, sass/style.scss */
 .tabs h2 { margin: 0; }
-/* line 121, sass/style.scss */
+/* line 122, sass/style.scss */
 .tabs li:hover a, .tabs li:focus a { color: #fffffe; }
-/* line 123, sass/style.scss */
+/* line 124, sass/style.scss */
 .tabs li:hover a h3, .tabs li:focus a h3 { color: #fffffe; }
-/* line 129, sass/style.scss */
+/* line 130, sass/style.scss */
 .tabs li.active a { border: none; color: #ffffff; }
-/* line 132, sass/style.scss */
+/* line 133, sass/style.scss */
 .tabs li.active a h3 { color: #fffffe; }
-/* line 137, sass/style.scss */
+/* line 138, sass/style.scss */
 .tabs li a { border: none; color: #1d1d1d; text-transform: none; text-decoration: none; margin: 15px 0; }
-/* line 143, sass/style.scss */
+/* line 144, sass/style.scss */
 .tabs li a h3 { color: #1d1d1d; }
 
 /* @group mixins */
 /* @end */
 /* @group diamonds */
-/* line 186, sass/style.scss */
+/* line 187, sass/style.scss */
 .diamonds { font-size: 0; margin: 40px auto; padding: 39px 0; max-width: 1060px; }
-@media only screen and (min-width: 1348px) { /* line 158, sass/style.scss */
+@media only screen and (min-width: 1348px) { /* line 159, sass/style.scss */
   .diamonds li { /*&:nth-child(2n+4) { margin-left:128px !important; margin-top:-24px !important;
 }
 &:nth-child(2n+3) { margin-right: 0;
@@ -5660,7 +5575,7 @@ body { overflow-x: hidden; -webkit-transition: all 0.5s linear 0; -o-transition:
 }
 &:nth-child(n+4) { margin: 0;
 }*/ } }
-@media only screen and (max-width: 1347px) and (min-width: 1078px) { /* line 158, sass/style.scss */
+@media only screen and (max-width: 1347px) and (min-width: 1078px) { /* line 159, sass/style.scss */
   .diamonds li { /*&:nth-child(2n+4) { margin-left:128px !important; margin-top:-24px !important;
 }
 &:nth-child(2n+3) { margin-right: 0;
@@ -5669,7 +5584,7 @@ body { overflow-x: hidden; -webkit-transition: all 0.5s linear 0; -o-transition:
 }
 &:nth-child(n+4) { margin: 0;
 }*/ } }
-@media only screen and (max-width: 1077px) and (min-width: 808px) { /* line 158, sass/style.scss */
+@media only screen and (max-width: 1077px) and (min-width: 808px) { /* line 159, sass/style.scss */
   .diamonds li { /*&:nth-child(2n+4) { margin-left:128px !important; margin-top:-24px !important;
 }
 &:nth-child(2n+3) { margin-right: 0;
@@ -5678,7 +5593,7 @@ body { overflow-x: hidden; -webkit-transition: all 0.5s linear 0; -o-transition:
 }
 &:nth-child(n+4) { margin: 0;
 }*/ } }
-@media only screen and (max-width: 807px) and (min-width: 538px) { /* line 158, sass/style.scss */
+@media only screen and (max-width: 807px) and (min-width: 538px) { /* line 159, sass/style.scss */
   .diamonds li { /*&:nth-child(2n+4) { margin-left:128px !important; margin-top:-24px !important;
 }
 &:nth-child(2n+3) { margin-right: 0;
@@ -5687,23 +5602,23 @@ body { overflow-x: hidden; -webkit-transition: all 0.5s linear 0; -o-transition:
 }
 &:nth-child(n+4) { margin: 0;
 }*/ } }
-@media only screen and (max-width: 537px) { /* line 186, sass/style.scss */
+@media only screen and (max-width: 537px) { /* line 187, sass/style.scss */
   .diamonds { padding: 0; text-align: center; } }
-/* line 199, sass/style.scss */
+/* line 200, sass/style.scss */
 .diamonds > li { display: inline-block; float: left; font-size: 18px; margin: 0 20px 0 20px; }
-@media only screen and (max-width: 537px) { /* line 199, sass/style.scss */
+@media only screen and (max-width: 537px) { /* line 200, sass/style.scss */
   .diamonds > li { margin: 0 20px 0 20px; width: 60px; } }
-/* line 209, sass/style.scss */
+/* line 210, sass/style.scss */
 .diamonds .diamond { -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; backface-visibility: hidden; background: rgba(0, 0, 0, 0.7); color: #ffffff; display: block; height: 90px; overflow: hidden; -webkit-perspective: 1000; -moz-perspective: 1000; perspective: 1000; position: relative; text-decoration: none; width: 90px; -moz-transform: rotate(-45deg); -o-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -webkit-transform: rotate(-45deg); transform: rotate(-45deg); }
-@media only screen and (max-width: 537px) { /* line 209, sass/style.scss */
+@media only screen and (max-width: 537px) { /* line 210, sass/style.scss */
   .diamonds .diamond { height: 60px; -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); transform: rotate(0deg); width: 60px; } }
-/* line 227, sass/style.scss */
+/* line 228, sass/style.scss */
 .diamonds .diamond-content { display: table-cell; height: 90px; padding: 0 10px; -moz-transform: rotate(45deg); -o-transform: rotate(45deg); -ms-transform: rotate(45deg); -webkit-transform: rotate(45deg); transform: rotate(45deg); text-align: center; vertical-align: middle; width: 90px; }
-@media only screen and (max-width: 537px) { /* line 227, sass/style.scss */
+@media only screen and (max-width: 537px) { /* line 228, sass/style.scss */
   .diamonds .diamond-content { height: 60px; -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); transform: rotate(0deg); width: 60px; } }
-/* line 240, sass/style.scss */
+/* line 241, sass/style.scss */
 .diamonds .diamond-content h4 { font-size: 14px; color: #fff; line-height: 16px; margin: 0; position: relative; z-index: 99; }
-/* line 248, sass/style.scss */
+/* line 249, sass/style.scss */
 .diamonds .diamond-content i { font-size: 16px; padding: 0; margin: 0 auto 10px auto; display: block; position: relative; }
 
 /* @end */
@@ -5711,135 +5626,133 @@ body { overflow-x: hidden; -webkit-transition: all 0.5s linear 0; -o-transition:
  &:hover, &:focus{ background: transparentize( #000000, .4); @include rotate(-45); } .diamond-text { @include rotate(-45); display: table-cell; vertical-align: middle; margin:0; } h4 { font-size:14px; color:#fff; line-height:16px; margin:0; position:relative; z-index:99; } i { font-size:16px; padding:0; margin:0 auto 10px auto; display:block; position:relative; }
 }*/
 /* 1. navbar */
-/* line 299, sass/style.scss */
+/* line 300, sass/style.scss */
 nav#main-nav { margin: 65px 0 0 0; }
-/* line 301, sass/style.scss */
+/* line 302, sass/style.scss */
 nav#main-nav.scroll_in { margin: 0 0 0 0; background: rgba(34, 34, 34, 0.7); }
-/* line 304, sass/style.scss */
+/* line 305, sass/style.scss */
 nav#main-nav.scroll_in .navbar-brand { padding: 0; }
-/* line 309, sass/style.scss */
+/* line 310, sass/style.scss */
 nav#main-nav .fa:before, nav#main-nav .fa:after { font-size: 24px; color: #fff; }
-/* line 314, sass/style.scss */
+/* line 315, sass/style.scss */
 nav#main-nav .revel_on_scroll { height: 45px; width: 45px; }
-/* line 320, sass/style.scss */
+/* line 321, sass/style.scss */
 nav#main-nav .navbar-nav > li > a { background-color: #106292; color: #fff; padding: 10px 12px; }
-/* line 325, sass/style.scss */
+/* line 326, sass/style.scss */
 nav#main-nav .navbar-nav > li > a:hover, nav#main-nav .navbar-nav > li > a:focus { background-color: #0d537b; color: #fff; }
-@media (max-width: 767px) { /* line 334, sass/style.scss */
+@media (max-width: 767px) { /* line 335, sass/style.scss */
   nav#main-nav .open .dropdown-menu { background-color: rgba(34, 34, 34, 0.7); } }
 
 /* 1. header */
-/* line 340, sass/style.scss */
+/* line 341, sass/style.scss */
 header#header { height: 768px; padding: 336.5px 0; overflow: hidden; }
-/* line 345, sass/style.scss */
+/* line 346, sass/style.scss */
 header#header h2 { color: #fff; margin: 0; font-size: 24px; text-transform: uppercase; }
-/* line 350, sass/style.scss */
+/* line 351, sass/style.scss */
 header#header h2 small, header#header h2 strong { display: block; color: #fff; font-size: 4.5rem; text-transform: uppercase; font-weight: 600; }
 
 /* 2.Article */
 /* 2.1.Agencia */
-/* line 362, sass/style.scss */
+/* line 363, sass/style.scss */
 section#agencia { height: 768px; overflow: hidden; }
-/* line 365, sass/style.scss */
-section#agencia .container { padding: 126.5px 0; }
-/* line 369, sass/style.scss */
+/* line 366, sass/style.scss */
+section#agencia .container { padding: 339px 0; padding: 126.5px 0; }
+/* line 371, sass/style.scss */
 section#agencia .embed-responsive-16by9 { padding-bottom: 30%; }
-/* line 372, sass/style.scss */
+/* line 374, sass/style.scss */
 section#agencia .fa { margin-right: 8px; }
-/* line 375, sass/style.scss */
+/* line 377, sass/style.scss */
 section#agencia h3 { color: #000000; font-weight: 400; }
-/* line 379, sass/style.scss */
+/* line 381, sass/style.scss */
 section#agencia h2 { color: #000; font-weight: 600; font-size: 28px; }
-/* line 384, sass/style.scss */
+/* line 386, sass/style.scss */
 section#agencia .text-black { color: #000; }
-/* line 387, sass/style.scss */
+/* line 389, sass/style.scss */
 section#agencia p { color: #999999; }
 
 /* 2.2.servicos */
-/* line 393, sass/style.scss */
+/* line 395, sass/style.scss */
 section#servicos { height: 768px; background: #000000; overflow: hidden; }
-/* line 397, sass/style.scss */
+/* line 399, sass/style.scss */
 section#servicos .row { z-index: 999; }
-/* line 400, sass/style.scss */
+/* line 402, sass/style.scss */
 section#servicos .tab-pane .row { padding: 139px 0; }
-/* line 403, sass/style.scss */
+/* line 405, sass/style.scss */
 section#servicos .col-equalizer { height: 768px; }
-/* line 406, sass/style.scss */
-section#servicos .tabs { padding: 117px 0; }
 /* line 408, sass/style.scss */
+section#servicos .tabs { padding: 117px 0; }
+/* line 410, sass/style.scss */
 section#servicos .tabs li { width: 95%; }
-/* line 412, sass/style.scss */
+/* line 414, sass/style.scss */
 section#servicos .content { padding: 117px 0; }
-/* line 415, sass/style.scss */
+/* line 417, sass/style.scss */
 section#servicos h2 { font-size: 28px; font-weight: bold; text-transform: uppercase; line-height: 1.2; margin: 0; }
-/* line 422, sass/style.scss */
+/* line 424, sass/style.scss */
 section#servicos h3 { color: #ffffff; font-size: 24px; }
 
 /* 2.3.projetos */
-/* line 429, sass/style.scss */
+/* line 431, sass/style.scss */
 section#projetos { background: #106292; height: 768px; }
-/* line 432, sass/style.scss */
+/* line 434, sass/style.scss */
 section#projetos h2, section#projetos h3, section#projetos p { color: #ffffff; }
 
 /* 2.3.blog */
-/* line 440, sass/style.scss */
+/* line 442, sass/style.scss */
 section#blog { background: white; height: 768px; }
 
 /* 3.Contato */
 /* 4.Footer */
-/* line 449, sass/style.scss */
+/* line 451, sass/style.scss */
 footer#footer #contato-rapido { height: 550px; padding: 90px 0; }
-/* line 452, sass/style.scss */
+/* line 454, sass/style.scss */
 footer#footer #contato-rapido p, footer#footer #contato-rapido a { display: block; color: #aaa9a9; margin: 0 0 5px 0; }
-/* line 458, sass/style.scss */
+/* line 460, sass/style.scss */
 footer#footer #contato-rapido form input, footer#footer #contato-rapido form textarea { border: none; -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px; box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px; padding: 6px 12px 6px 0; }
-/* line 463, sass/style.scss */
+/* line 465, sass/style.scss */
 footer#footer #contato-rapido form textarea { resize: none; height: 60px; }
-/* line 467, sass/style.scss */
+/* line 469, sass/style.scss */
 footer#footer #contato-rapido form button { padding: 6px 0 6px 12px; background: none; color: #000000; -moz-border-radius: 0px / 0px; -webkit-border-radius: 0px 0px; border-radius: 0px / 0px; -webkit-box-shadow: none; box-shadow: none; }
-/* line 473, sass/style.scss */
+/* line 475, sass/style.scss */
 footer#footer #contato-rapido form button i { color: #106293; }
-/* line 477, sass/style.scss */
+/* line 479, sass/style.scss */
 footer#footer #contato-rapido form input[type="submit"] { padding: 6px 0 6px 12px; background: none; color: #000000; -moz-border-radius: 0px / 0px; -webkit-border-radius: 0px 0px; border-radius: 0px / 0px; -webkit-box-shadow: none; box-shadow: none; }
-/* line 483, sass/style.scss */
-footer#footer #contato-rapido form input[type="submit"]:before { position: relative; display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; content: "\f0e0"; }
-/* line 497, sass/style.scss */
-footer#footer #contato-rapido div.wpcf7 { margin: 0; padding: 0; }
+/* line 485, sass/style.scss */
+footer#footer #contato-rapido form input[type="submit"]:before { position: relative; display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; content: "\f003"; content: "\f0e0"; }
 /* line 500, sass/style.scss */
+footer#footer #contato-rapido div.wpcf7 { margin: 0; padding: 0; }
+/* line 503, sass/style.scss */
 footer#footer #contato-rapido div.wpcf7 .screen-reader-response { position: absolute; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); height: 1px; width: 1px; margin: 0; padding: 0; border: 0; }
-/* line 510, sass/style.scss */
+/* line 513, sass/style.scss */
 footer#footer #contato-rapido div.wpcf7 img.ajax-loader { border: none; vertical-align: middle; margin-left: 4px; }
-/* line 515, sass/style.scss */
-footer#footer #contato-rapido div.wpcf7 div.ajax-error { display: none; }
 /* line 518, sass/style.scss */
+footer#footer #contato-rapido div.wpcf7 div.ajax-error { display: none; }
+/* line 521, sass/style.scss */
 footer#footer #contato-rapido div.wpcf7 .placeheld { color: #888; }
-/* line 522, sass/style.scss */
+/* line 525, sass/style.scss */
 footer#footer #contato-rapido div.wpcf7-response-output { font-size: 75% !important; }
-/* line 527, sass/style.scss */
+/* line 530, sass/style.scss */
 footer#footer #contato-rapido div.wpcf7-mail-sent-ok { color: #3c763d; }
-/* line 531, sass/style.scss */
+/* line 534, sass/style.scss */
 footer#footer #contato-rapido div.wpcf7-mail-sent-ng { color: #ff0000; }
-/* line 535, sass/style.scss */
+/* line 538, sass/style.scss */
 footer#footer #contato-rapido div.wpcf7-spam-blocked { color: #8a6d3b; }
-/* line 539, sass/style.scss */
+/* line 542, sass/style.scss */
 footer#footer #contato-rapido div.wpcf7-validation-errors { color: #a94442; }
-/* line 544, sass/style.scss */
-footer#footer #contato-rapido .wpcf7-form-control-wrap { position: relative; }
 /* line 547, sass/style.scss */
+footer#footer #contato-rapido .wpcf7-form-control-wrap { position: relative; }
+/* line 550, sass/style.scss */
 footer#footer #contato-rapido span.wpcf7-not-valid-tip { background-color: #d9534f; border: none !important; left: 20%; font-size: 75% !important; font-weight: bold; line-height: 1; position: absolute; color: #fff !important; text-align: center; white-space: nowrap; vertical-align: baseline; -moz-border-radius: 0.25em / 0.25em; -webkit-border-radius: 0.25em 0.25em; border-radius: 0.25em / 0.25em; top: 20%; z-index: 100; padding: .2em .6em .3em !important; }
 /* line 7, js/vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_labels.scss */
 footer#footer #contato-rapido span.wpcf7-not-valid-tip[href]:hover, footer#footer #contato-rapido span.wpcf7-not-valid-tip[href]:focus { background-color: #c9302c; }
-/* line 565, sass/style.scss */
+/* line 568, sass/style.scss */
 footer#footer #contato-rapido .use-floating-validation-tip span.wpcf7-not-valid-tip { background-color: #d9534f; border: none !important; left: 20%; font-size: 75% !important; font-weight: bold; line-height: 1; position: absolute; color: #fff !important; text-align: center; white-space: nowrap; vertical-align: baseline; -moz-border-radius: 0.25em / 0.25em; -webkit-border-radius: 0.25em 0.25em; border-radius: 0.25em / 0.25em; top: 20%; z-index: 100; padding: .2em .6em .3em !important; }
 /* line 7, js/vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_labels.scss */
 footer#footer #contato-rapido .use-floating-validation-tip span.wpcf7-not-valid-tip[href]:hover, footer#footer #contato-rapido .use-floating-validation-tip span.wpcf7-not-valid-tip[href]:focus { background-color: #c9302c; }
-/* line 583, sass/style.scss */
-footer#footer #contato-rapido span.wpcf7-list-item { margin-left: 0.5em; }
 /* line 586, sass/style.scss */
+footer#footer #contato-rapido span.wpcf7-list-item { margin-left: 0.5em; }
+/* line 589, sass/style.scss */
 footer#footer #contato-rapido .wpcf7-display-none { display: none; }
-/* line 590, sass/style.scss */
+/* line 593, sass/style.scss */
 footer#footer #mapa { height: 218px; }
-/* line 592, sass/style.scss */
+/* line 595, sass/style.scss */
 footer#footer #mapa .embed-responsive-16by9 { padding-bottom: 218px; }
->>>>>>> origin/master
->>>>>>> refs/remotes/origin/master
