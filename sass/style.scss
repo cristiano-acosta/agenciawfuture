@@ -31,7 +31,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
    Cristiano Acosta-
    ========================================================================== */
 /* variables */
-$height:615px;
+$height:768px;
 
 $bg_azul: #106292 ;
 
@@ -120,12 +120,18 @@ body {
     &:hover, &:focus{
       a{
         color:#fffffe;
+        h3 {
+          color:#fffffe;
+        }
       }
     }
     &.active {
       a {
         border:none;
         color:#ffffff;
+        h3 {
+          color:#fffffe;
+        }
       }
     }
     a {
@@ -133,6 +139,10 @@ body {
       color:#1d1d1d;
       text-transform:none;
       text-decoration:none;
+      margin:15px 0;
+      h3 {
+        color:#1d1d1d;
+      }
     }
   }
 }
@@ -152,14 +162,14 @@ body {
         }
         &:nth-child(#{$n}n+#{$maxRow}) {
           margin-right: 0;
-        }*/
+        }
         &:nth-child(n+#{$maxRow}) {
             margin-left: 62px;
             margin-top: -22px;
         }
         &:nth-child(n+#{$maxRow + 1}) {
             margin: 0;
-        }
+        }*/
       }
   }
 }
@@ -188,10 +198,11 @@ $belowDiamond: '(max-width: 537px)';
     max-width: 1060px;
   > li {
     display: inline-block;
+    float:left;
     font-size: 18px;
-    margin-right: 35px;
+    margin: 0 20px 0 20px;
     @include respond-to($belowDiamond) {
-      margin-right: 0;
+      margin: 0 20px 0 20px;
       width: $belowDiamondSize;
     }
   }
@@ -283,14 +294,18 @@ $belowDiamond: '(max-width: 537px)';
     font-size:16px; padding:0; margin:0 auto 10px auto; display:block; position:relative;
   }
 }*/
+
 /* 1. navbar */
 nav#main-nav {
   margin:65px 0 0 0;
   &.scroll_in {
-    margin:5px 0 0 0;
+    margin:0 0 0 0;
     background: $dropdown-bg;
+    .navbar-brand {
+      padding:0;
+    }
   }
-  .fa-bars {
+  .fa {
     &:before, &:after {
       font-size:24px;
       color:#fff;
@@ -306,6 +321,7 @@ nav#main-nav {
         background-color:$bg_azul;
         color:#fff;
         padding:10px 12px;
+
         &:hover, &:focus {
           background-color:  darken($bg_azul, 5%);
           color:#fff;
@@ -326,7 +342,6 @@ header#header {
   //padding:(( $height - 95px ) / 2) 0;
   @include vertical_center_padding( $height, 95px );
   overflow:hidden;
-
   h2 {
     color:#fff;
     margin:0;
@@ -383,7 +398,7 @@ section#servicos {
     z-index:999;
   }
   .tab-pane .row {
-    @include vertical_center_padding( ( $height / 2 ) , 490px );
+    @include vertical_center_padding(  $height, 490px );
   }
   .col-equalizer {
     height:$height;
@@ -411,14 +426,67 @@ section#servicos {
 }
 
 /* 2.3.projetos */
+section#projetos {
+  background:$bg_azul;
+  height:$height;
+  h2, h3, p {
+    color:#ffffff;
+  }
 
-/* 2.3.projetos */
+}
+
 
 /* 2.3.blog */
-
+section#blog {
+  background:white;
+  height:$height;
+}
 /* 3.Contato */
 
 /* 4.Footer */
 footer#footer {
+  $this_height : 550px;
+  #contato-rapido {
+    height:$this_height;
+    @include vertical_center_padding( $this_height, 370px );
+    p, a {
+      display:block;
+      color:#aaa9a9;
+      margin:0 0 5px 0;
+    }
+    form {
+      input, textarea {
+        border:none;
+        @include box-shadow(rgba(#000000, 0.4) 0px 1px 0px);
+        padding:6px 12px 6px 0;
+      }
+      textarea {
+        resize:none;
+        height:60px;
+      }
+      input[type="submit"] {
+        padding:6px 0 6px 12px;
+        background:none;
+        color:#000000;
+        @include border-radius(0px, 0px);
+        @include box-shadow(none);
+        & :before {
+          display: inline-block;
+          font: normal normal normal #{$fa-font-size-base}/#{$fa-line-height-base} FontAwesome; // shortening font declaration
+          font-size: inherit; // can't have font-size inherit on line above, so need to override
+          text-rendering: auto; // optimizelegibility throws things off #1094
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          content: $fa-var-envelope-o;
+        }
+      }
+    }
+  }
+  #mapa {
+    height:($height - $this_height);
+    .embed-responsive-16by9 {
+      padding-bottom:($height - $this_height);
+    }
+  }
 
 }
