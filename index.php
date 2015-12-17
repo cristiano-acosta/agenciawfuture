@@ -77,9 +77,9 @@
                       'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                       //Process nav menu using our custom nav walker
                       //'walker' => new wp_bootstrap_navwalker())
-                    ) );
-
-                  ?>
+                    )
+                  );
+                ?>
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -139,9 +139,6 @@
         <section id="servicos">
           <div class="container">
             <div class="row">
-
-            </div>
-          </div>
               <!-- TAB NAVIGATION -->
               <ul class="col-md-3 tabs" role="tablist">
                 <li class="list-unstyled">
@@ -213,17 +210,16 @@
                                         </a>
                                       </li>
                                     <?php } ?>
-
                                 </ul>
                                 <h3 class="clearfix"><?php print_r($children->post_title) ?></h3>
                               </div>
-                              <?
-                            }
-                          }
-                      ?>
+                              <?php } ?>
+                              <?php } ?>
                     </div>
                   </div>
-                <?php endwhile; }  wp_reset_query(); ?>
+                <?php endwhile; ?>
+                  <?php } ?>
+                  <?php wp_reset_query();?>
               </div>
             </div>
           </div>
@@ -327,7 +323,9 @@
                           <div class="carousel-caption">
                           </div>
                         </div>
-                      <?php endwhile; }  wp_reset_query(); ?>
+                    <?php endwhile; ?>
+                    <?php } ?>
+                    <?php wp_reset_query(); ?>
                   </div>
 
                   <!-- Controls -->
@@ -345,7 +343,9 @@
           </div>
         </section>
       </article>
-    <?php endwhile; endif; wp_reset_query(); ?>
+
+      <?php endwhile; endif; wp_reset_query(); ?>
+
     <footer id="footer">
       <div id="contato-rapido">
         <div class="container">
@@ -434,5 +434,3 @@
     <?php wp_footer(); ?>
   </body>
 </html>
-
-
