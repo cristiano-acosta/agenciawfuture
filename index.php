@@ -66,7 +66,7 @@
                       'container_class' => '',
                       'container_id'    => '',
                       'menu_class'      => 'dropdown-menu',
-                      'fallback_cb'     => 'wp_page_menu',
+                      'fallback_cb'     => '',
                       'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                       //Process nav menu using our custom nav walker
                       //'walker' => new wp_bootstrap_navwalker())
@@ -104,7 +104,7 @@
               <div class="row">
                 <div class="col-md-3">
                   <h2 class="text-uppercase"><?php the_title(); ?></h2>
-                  <p class="black text-right">
+                  <p class="text-right">
                     Criamos projetos de marketing digital focados em presença, audiência e resultados.
                   </p>
                 </div>
@@ -136,46 +136,206 @@
             </div>
           </div>
               <!-- TAB NAVIGATION -->
-              <ul class="col-md-3 nav-tabs" role="tablist">
+              <ul class="col-md-3 tabs" role="tablist">
+                <li class="list-unstyled">
+                  <h2>
+                    <?php
+                      $obj = get_post_type_object( 'servicos' );
+                      echo $obj->labels->singular_name;
+                    ?>
+                  </h2>
+                </li>
                 <?php
                   $index = 0;
                   $post_type = 'servicos';
-                $Query = new WP_Query(array('post_type' => $post_type, 'post_status' => 'publish', 'posts_per_page' => -1));
+                $Query = new WP_Query(array('post_type' => $post_type, 'post_status' => 'publish', 'orderby'=>'menu_order','order'=>'ASC', 'post_parent' => 0, 'posts_per_page' => -1 ));
                 if ($Query->have_posts()) { while ($Query->have_posts()) : $Query->the_post();
-                  $index++
+                  $index++;
                 ?>
-                  <li class="<?php if ($index == 1 ) echo 'active' ?>">
+                  <li class="<?php if ($index == 1 ) echo 'active' ?> list-unstyled ">
                     <a href="#<?php the_slug() ?>" role="tab" data-toggle="tab">
-                      <h2><?php the_title() ?></h2>
+                      <h3><?php the_title() ?></h3>
                       <p><?php the_excerpt_limited(24) ?></p>
-                    </a>cd
+                    </a>
                   </li>
                 <?php endwhile; }  wp_reset_query(); ?>
-
-
               </ul>
               <!-- TAB CONTENT -->
               <div class="col-md-9 tab-content">
                 <?php
                   $index = 0;
                   $post_type = 'servicos';
-                  $Query = new WP_Query(array('post_type' => $post_type, 'post_status' => 'publish', 'posts_per_page' => -1));
+                  $Query = new WP_Query(array('post_type' => $post_type, 'post_status' => 'publish', 'orderby'=>'menu_order','order'=>'ASC', 'post_parent' => 0, 'posts_per_page' => -1 ));
                   if ($Query->have_posts()) { while ($Query->have_posts()) : $Query->the_post();
-                    $index++
-                    ?>
-                    <div class="<?php if ($index == 1 ) echo 'active' ?> tab-pane fade in" id="<?php the_slug() ?>">
-                      <h2><?php the_title() ?></h2>
+                    $index++;
+                ?>
+                  <div class="col-equalizer <?php if ($index == 1 ) echo 'active' ?> tab-pane fade in" id="<?php the_slug() ?>">
+                    <h2 class="hidden"><?php the_title() ?></h2>
+                    <?php if (get_post_meta( get_the_ID(), 'wpcf-bg-paralax', true )) { ?>
+                      <div class="bg-paralax" style="background-image: url('<?php echo get_post_meta( get_the_ID(), 'wpcf-bg-paralax', true ); ?>');"></div>
+                    <?php }  ?>
+                    <div class="row">
+                      <?php
+                          $args = array(
+                            'numberposts' => 3,
+                            'order' => 'ASC',
+                            'orderby'=>'menu_order',
+                            'post_parent' => get_the_ID(),
+                            'post_status' => null,
+                            'post_type' => $post_type,
+                          );
+                          $childrens = get_children( $args );
+
+                          if ( $childrens ) {
+                            foreach ( $childrens as $children ) {
+                              ?>
+                              <div class="col-md-4">
+                                <ul class="diamonds ">
+                                  <?php
+                                    $term_list = wp_get_post_terms($children->ID, 'icones', array( 'orderby' => 'name', 'order' => 'ASC', "fields" => "all"));
+                                    foreach( $term_list as $term ){
+                                      ?>
+                                      <li>
+                                        <a href="#<?php print_r($term->slug) ?>" class="diamond">
+                                          <div class="diamond-content">
+                                            <h4>
+                                              <?php echo tax_icons_output_term_icon($term->term_id, '' ); ?>
+                                              <?php print_r($term->name) ?>
+                                            </h4>
+                                          </div>
+                                        </a>
+                                      </li>
+                                    <?php } ?>
+
+                                </ul>
+                                <h3 class="clearfix"><?php print_r($children->post_title) ?></h3>
+                              </div>
+                              <?
+                            }
+                          }
+                      ?>
                     </div>
-                  <?php endwhile; }  wp_reset_query(); ?>
+                  </div>
+                <?php endwhile; }  wp_reset_query(); ?>
               </div>
             </div>
           </div>
         </section>
         <section id="projetos">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <h2>Últimos Projetos</h2>
+              </div>
+              <div class="col-md-3">
+                <h3> Nossos projetos buscam promover resultados</h3>
+                <p>
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam.
+                </p>
+              </div>
+              <div class="col-md-6">
+                <div id="carousel-slides" class="carousel slide" data-ride="carousel">
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                    <?php
+                      $index = 0;
+                      $post_type = 'portfolio';
+                      $Query = new WP_Query(array('post_type' => $post_type, 'post_status' => 'publish', 'posts_per_page' => -1));
+                      if ($Query->have_posts()) { while ($Query->have_posts()) : $Query->the_post();
+                      $index++;
+                    ?>
+                      <li data-target="#carousel-slides" data-slide-to="<?php echo $index; ?>" <?php if($index == 1){ echo 'class="active"'; } ?>></li>
+                    <?php endwhile; }  wp_reset_query(); ?>
+                  </ol>
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner" role="listbox">
+                    <?php
+                      $index = 0;
+                      $post_type = 'portfolio';
+                      $Query = new WP_Query(array('post_type' => $post_type, 'post_status' => 'publish', 'posts_per_page' => -1));
+                      if ($Query->have_posts()) { while ($Query->have_posts()) : $Query->the_post();
+                        $index++;
+                    ?>
+                      <div class="item <?php if($index == 1){ echo 'active'; } ?>">
+                        <img src="<?php the_image_src(); ?>" alt="<?php the_title(); ?>" class="img-responsive">
+                        <div class="carousel-caption">
+                        </div>
+                      </div>
+                    <?php endwhile; }  wp_reset_query(); ?>
+                  </div>
 
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#carousel-slides" role="button" data-slide="prev">
+                    <span class="fa fa-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="right carousel-control" href="#carousel-slides" role="button" data-slide="next">
+                    <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
         <section id="blog">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <h2>Últimos Projetos</h2>
+              </div>
+              <div class="col-md-3">
+                <h3> Nossos projetos buscam promover resultados</h3>
+                <p>
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam.
+                </p>
+              </div>
+              <div class="col-md-6">
+                <div id="carousel-slides" class="carousel slide" data-ride="carousel">
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                    <?php
+                      $index = 0;
+                      $post_type = 'post';
+                      $Query = new WP_Query(array('post_type' => $post_type, 'post_status' => 'publish', 'posts_per_page' => -1));
+                      if ($Query->have_posts()) { while ($Query->have_posts()) : $Query->the_post();
+                        $index++;
+                        ?>
+                        <li data-target="#carousel-slides" data-slide-to="<?php echo $index; ?>" <?php if($index == 1){ echo 'class="active"'; } ?>></li>
+                      <?php endwhile; }  wp_reset_query(); ?>
+                  </ol>
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner" role="listbox">
+                    <?php
+                      $index = 0;
+                      $post_type = 'post';
+                      $Query = new WP_Query(array('post_type' => $post_type, 'post_status' => 'publish', 'posts_per_page' => -1));
+                      if ($Query->have_posts()) { while ($Query->have_posts()) : $Query->the_post();
+                        $index++;
+                        ?>
+                        <div class="item <?php if($index == 1){ echo 'active'; } ?>">
+                          <img src="<?php the_image_src(); ?>" alt="<?php the_title(); ?>" class="img-responsive">
+                          <div class="carousel-caption">
+                          </div>
+                        </div>
+                      <?php endwhile; }  wp_reset_query(); ?>
+                  </div>
 
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#carousel-slides" role="button" data-slide="prev">
+                    <span class="fa fa-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="right carousel-control" href="#carousel-slides" role="button" data-slide="next">
+                    <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
       </article>
     <?php endwhile; endif; wp_reset_query(); ?>
@@ -183,8 +343,23 @@
       <div id="contato-rapido">
         <div class="container">
           <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-12">
               <h2>Entre em contato</h2>
+            </div>
+            <div class="col-md-3">
+              <div itemscope itemtype="http://schema.org/LocalBusiness">
+                <h3 class="hidden" itemprop="name"><?php bloginfo('name') ?></h3>
+                <p class="hidden" itemprop="description"><?php bloginfo('description') ?></p>
+                <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                  <p itemprop="streetAddress">Av. Antonio de Carvalho, 1625 <br />CJ 301</p>
+                  <p itemprop="addressLocality">Porto Alegre</p>
+                  <p>CEP: <span itemprop="postalCode">91430-001</span></p>
+                  <p><abbr itemprop="addressRegion" title="Rio Grande do Sul">RS</abbr></p>
+                </address>
+                <a href="mailto:marketing@agenciawfuture.com.br" itemprop="email">marketing@agenciawfuture.com.br</a>
+                <a href="tel:+555137790313" itemprop="telephone">51.3779-0313</a>
+                <a href="tel:+554833641544" itemprop="telephone">48.3364-1544</a>
+              </div>
             </div>
             <div class="col-md-8">
               <h3>Faça agora um contato</h3>
@@ -214,7 +389,7 @@
     <script src="<?php echo get_template_directory_uri().'/'; ?>js/plugins.js"></script>
     <script src="<?php echo get_template_directory_uri().'/'; ?>js/vendor/vegas/dist/vegas.min.js"></script>
     <script src="<?php echo get_template_directory_uri().'/'; ?>js/main.js"></script>
-    <script >
+    <script id="vegas" >
       jQuery(document).ready(function ($) {
         /** */
         $('#header').vegas({
