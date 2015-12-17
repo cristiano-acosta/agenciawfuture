@@ -29,6 +29,13 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri().'/'; ?>style.css">
     <!-- .JS -->
     <script src="<?php echo get_template_directory_uri().'/'; ?>js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <!-- Wordpress  -->
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
+    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
+    <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?>" href="<?php bloginfo('rss2_url'); ?>"/>
+    <link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?>" href="<?php bloginfo('atom_url'); ?>"/>
+    <?php wp_head(); ?>
+
   </head>
   <body>
     <!--[if lt IE 8]>
@@ -364,7 +371,8 @@
             <div class="col-md-8">
               <h3>Faça agora um contato</h3>
               <div class="row">
-                <?php echo do_shortcode('[contact-form-7 id="4" title="Contato"]'); ?>
+                <?php echo do_shortcode('[contact-form-7 id="4" title="Contato" html_class="use-floating-validation-tip"]'); ?>
+
               </div>
             </div>
             <div class="col-md-1">
@@ -423,6 +431,7 @@
       ga('create', 'UA-56774533-1', 'auto');
       ga('send', 'pageview');
     </script>
+    <?php wp_footer(); ?>
   </body>
 </html>
 
