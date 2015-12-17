@@ -29,6 +29,13 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri().'/'; ?>style.css">
     <!-- .JS -->
     <script src="<?php echo get_template_directory_uri().'/'; ?>js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <!-- Wordpress  -->
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
+    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
+    <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?>" href="<?php bloginfo('rss2_url'); ?>"/>
+    <link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?>" href="<?php bloginfo('atom_url'); ?>"/>
+    <?php wp_head(); ?>
+
   </head>
   <body>
     <!--[if lt IE 8]>
@@ -70,9 +77,9 @@
                       'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                       //Process nav menu using our custom nav walker
                       //'walker' => new wp_bootstrap_navwalker())
-                    ) );
-
-                  ?>
+                    )
+                  );
+                ?>
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -132,9 +139,6 @@
         <section id="servicos">
           <div class="container">
             <div class="row">
-
-            </div>
-          </div>
               <!-- TAB NAVIGATION -->
               <ul class="col-md-3 tabs" role="tablist">
                 <li class="list-unstyled">
@@ -206,17 +210,16 @@
                                         </a>
                                       </li>
                                     <?php } ?>
-
                                 </ul>
                                 <h3 class="clearfix"><?php print_r($children->post_title) ?></h3>
                               </div>
-                              <?
-                            }
-                          }
-                      ?>
+                              <?php } ?>
+                              <?php } ?>
                     </div>
                   </div>
-                <?php endwhile; }  wp_reset_query(); ?>
+                <?php endwhile; ?>
+                  <?php } ?>
+                  <?php wp_reset_query();?>
               </div>
             </div>
           </div>
@@ -320,7 +323,9 @@
                           <div class="carousel-caption">
                           </div>
                         </div>
-                      <?php endwhile; }  wp_reset_query(); ?>
+                    <?php endwhile; ?>
+                    <?php } ?>
+                    <?php wp_reset_query(); ?>
                   </div>
 
                   <!-- Controls -->
@@ -338,7 +343,9 @@
           </div>
         </section>
       </article>
-    <?php endwhile; endif; wp_reset_query(); ?>
+
+      <?php endwhile; endif; wp_reset_query(); ?>
+
     <footer id="footer">
       <div id="contato-rapido">
         <div class="container">
@@ -364,7 +371,8 @@
             <div class="col-md-8">
               <h3>Faça agora um contato</h3>
               <div class="row">
-                <?php echo do_shortcode('[contact-form-7 id="4" title="Contato"]'); ?>
+                <?php echo do_shortcode('[contact-form-7 id="4" title="Contato" html_class="use-floating-validation-tip"]'); ?>
+
               </div>
             </div>
             <div class="col-md-1">
@@ -423,7 +431,6 @@
       ga('create', 'UA-56774533-1', 'auto');
       ga('send', 'pageview');
     </script>
+    <?php wp_footer(); ?>
   </body>
 </html>
-
-
