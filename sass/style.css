@@ -1,21 +1,21 @@
 /*
 Error: Invalid CSS after "...sition:relative": expected "{", was ";"
-        on line 485 of style.scss
+        on line 488 of style.scss
 
-480:         @include border-radius(0px, 0px);
-481:         @include box-shadow(none);
-482:         &:before {
-483: <<<<<<< HEAD
-484: =======
-485:           position:relative;
-486: >>>>>>> refs/remotes/origin/master
-487:           display: inline-block;
-488:           font: normal normal normal #{$fa-font-size-base}/#{$fa-line-height-base} FontAwesome; // shortening font declaration
-489:           font-size: inherit; // can't have font-size inherit on line above, so need to override
-490:           text-rendering: auto; // optimizelegibility throws things off #1094
+483:         @include border-radius(0px, 0px);
+484:         @include box-shadow(none);
+485:         &:before {
+486: <<<<<<< HEAD
+487: =======
+488:           position:relative;
+489: >>>>>>> refs/remotes/origin/master
+490:           display: inline-block;
+491:           font: normal normal normal #{$fa-font-size-base}/#{$fa-line-height-base} FontAwesome; // shortening font declaration
+492:           font-size: inherit; // can't have font-size inherit on line above, so need to override
+493:           text-rendering: auto; // optimizelegibility throws things off #1094
 
 Backtrace:
-style.scss:485
+style.scss:488
 C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1161:in `expected'
 C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1097:in `expected'
 C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1092:in `tok!'
@@ -64,4 +64,4 @@ C:/Ruby22-x64/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"...sition:relative\": expected \"{\", was \";\"\A         on line 485 of style.scss\A \A 480:         @include border-radius(0px, 0px);\A 481:         @include box-shadow(none);\A 482:         &:before {\A 483: <<<<<<< HEAD\A 484: =======\A 485:           position:relative;\A 486: >>>>>>> refs/remotes/origin/master\A 487:           display: inline-block;\A 488:           font: normal normal normal #{$fa-font-size-base}/#{$fa-line-height-base} FontAwesome; // shortening font declaration\A 489:           font-size: inherit; // can't have font-size inherit on line above, so need to override\A 490:           text-rendering: auto; // optimizelegibility throws things off #1094"; }
+  content: "Error: Invalid CSS after \"...sition:relative\": expected \"{\", was \";\"\A         on line 488 of style.scss\A \A 483:         @include border-radius(0px, 0px);\A 484:         @include box-shadow(none);\A 485:         &:before {\A 486: <<<<<<< HEAD\A 487: =======\A 488:           position:relative;\A 489: >>>>>>> refs/remotes/origin/master\A 490:           display: inline-block;\A 491:           font: normal normal normal #{$fa-font-size-base}/#{$fa-line-height-base} FontAwesome; // shortening font declaration\A 492:           font-size: inherit; // can't have font-size inherit on line above, so need to override\A 493:           text-rendering: auto; // optimizelegibility throws things off #1094"; }
